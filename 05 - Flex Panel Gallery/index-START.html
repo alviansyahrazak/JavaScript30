@@ -86,11 +86,17 @@
       .panel > *:first-child {
         transform: translateY(-100%);
       }
-      .panel.open-active > *:first-child { transform: translateY(0); }
+      .panel.open-active > *:first-child {
+        transform: translateY(0);
+        transition-delay: 1s;
+      }
       .panel > *:last-child {
         transform: translateY(100%);
       }
-      .panel.open-active > *:last-child { transform: translateY(0); }
+      .panel.open-active > *:last-child {
+        transform: translateY(0);
+        transition-delay: 1s;
+      }
 
       .panel p {
         text-transform: uppercase;
@@ -138,15 +144,14 @@
     </div>
 
     <script>
-      const panel = document.querySelectorAll(".panel")
+      const panel = document.querySelectorAll('.panel');
 
-      panel.forEach(panel => {
-        panel.addEventListener("click", ()=> {
-          panel.classList.toggle("open")
-          panel.classList.add("open-active")
-        })
-      })
-
+      panel.forEach((panel) => {
+        panel.addEventListener('click', () => {
+          panel.classList.toggle('open');
+          panel.classList.contains("open") ? panel.classList.add("open-active") : panel.classList.remove("open-active")
+        });
+      });
     </script>
   </body>
 </html>
