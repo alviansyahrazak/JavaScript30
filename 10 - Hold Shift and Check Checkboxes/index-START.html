@@ -103,8 +103,8 @@
         const currentChecked = e.target;
 
         if (e.shiftKey && lastChecked) {
-          const startIndex = Array.from(checkboxes).indexOf(lastChecked);
-          const endIndex = Array.from(checkboxes).indexOf(currentChecked);
+          let startIndex = Array.from(checkboxes).indexOf(lastChecked);
+          let endIndex = Array.from(checkboxes).indexOf(currentChecked);
 
           if (startIndex > endIndex) {
             [startIndex, endIndex] = [endIndex, startIndex];
